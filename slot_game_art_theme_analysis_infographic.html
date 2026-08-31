@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="th" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายงานวิเคราะห์เชิงลึก: ธีมและงานศิลป์เกมสล็อตในประเทศไทย</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Kanit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#0f172a',
+                            card: '#1e293b',
+                            border: '#334155',
+                            gold: '#f59e0b',
+                            goldLight: '#fbbf24',
+                            red: '#ef4444',
+                            crimson: '#f43f5e',
+                            cyan: '#06b6d4',
+                            purple: '#8b5cf6',
+                            text: '#f8fafc',
+                            muted: '#94a3b8'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: 'Kanit', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .glow-gold {
+            box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3);
+        }
+        .glow-red {
+            box-shadow: 0 0 25px -5px rgba(239, 68, 68, 0.3);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.3);
+        }
+        .gradient-gold-text {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-red-text {
+            background: linear-gradient(135deg, #f43f5e 0%, #ef4444 50%, #b91c1c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-cyan-text {
+            background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 50%, #0891b2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-16">
+
+    <header class="sticky top-0 z-50 bg-brand-bg/90 backdrop-blur-md border-b border-brand-border px-4 py-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 to-red-600 flex items-center justify-center font-bold text-xl text-slate-950 shadow-lg">
+                    🎰
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight text-white">รายงานวิเคราะห์งานศิลป์และธีมเกมสล็อต</h1>
+                    <p class="text-xs text-brand-muted">จิตวิทยาการรับรู้ โครงสร้างตลาด และวิศวกรรมทัศนศิลป์ในไทย</p>
+                </div>
+            </div>
+            <nav class="flex flex-wrap items-center gap-2 text-xs md:text-sm font-medium">
+                <a href="#market-themes" class="px-3 py-1.5 rounded-full bg-brand-card hover:bg-amber-500/20 hover:text-amber-400 border border-brand-border transition-all">ธีมและวัฒนธรรม</a>
+                <a href="#color-psychology" class="px-3 py-1.5 rounded-full bg-brand-card hover:bg-red-500/20 hover:text-red-400 border border-brand-border transition-all">จิตวิทยาโทนสี</a>
+                <a href="#providers" class="px-3 py-1.5 rounded-full bg-brand-card hover:bg-cyan-500/20 hover:text-cyan-400 border border-brand-border transition-all">เปรียบเทียบค่ายเกม</a>
+                <a href="#mechanics-fx" class="px-3 py-1.5 rounded-full bg-brand-card hover:bg-purple-500/20 hover:text-purple-400 border border-brand-border transition-all">กลไกและเอฟเฟกต์</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 pt-8 space-y-12">
+
+        <section class="text-center py-6 border-b border-brand-border/50">
+            <span class="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider text-amber-400 bg-amber-400/10 rounded-full border border-amber-400/20 mb-3">
+                Market & Art Architecture Report
+            </span>
+            <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
+                การวิเคราะห์เชิงลึก: <span class="gradient-gold-text">สไตล์ศิลปะ</span> และ <span class="gradient-red-text">จิตวิทยาการออกแบบ</span> เกมสล็อตไทย
+            </h2>
+            <p class="max-w-3xl mx-auto text-brand-muted text-sm md:text-base leading-relaxed">
+                การศึกษาโครงสร้างการออกแบบทัศนศิลป์และองค์ประกอบเชิงสัญลักษณ์ที่มีอิทธิพลต่อพฤติกรรมผู้เล่นในประเทศไทย 
+                ผ่านมิติจิตวิทยาความเชื่อ (Muketing) การจัดลำดับชั้นทางสายตา งานภาพ 3D Native และวิศวกรรมการสะท้อนอารมณ์
+            </p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                <div class="bg-brand-card p-5 rounded-xl border border-brand-border glow-gold text-center">
+                    <div class="text-3xl md:text-4xl font-extrabold text-amber-400 mb-1">9:16</div>
+                    <div class="text-xs font-medium text-brand-muted uppercase">Portrait Native Standard</div>
+                    <div class="text-xs text-slate-400 mt-1">ออกแบบสำหรับมือถือ 100%</div>
+                </div>
+                <div class="bg-brand-card p-5 rounded-xl border border-brand-border glow-red text-center">
+                    <div class="text-3xl md:text-4xl font-extrabold text-red-400 mb-1">95 - 97%</div>
+                    <div class="text-xs font-medium text-brand-muted uppercase">RTP Benchmark Standard</div>
+                    <div class="text-xs text-slate-400 mt-1">อัตราคืนทุนมาตรฐานตลาด</div>
+                </div>
+                <div class="bg-brand-card p-5 rounded-xl border border-brand-border glow-cyan text-center">
+                    <div class="text-3xl md:text-4xl font-extrabold text-cyan-400 mb-1">50,000x</div>
+                    <div class="text-xs font-medium text-brand-muted uppercase">Max Multiplier Cap</div>
+                    <div class="text-xs text-slate-400 mt-1">เพดานตัวคูณรางวัลสูงสุด</div>
+                </div>
+                <div class="bg-brand-card p-5 rounded-xl border border-brand-border text-center">
+                    <div class="text-3xl md:text-4xl font-extrabold text-purple-400 mb-1">3D Character</div>
+                    <div class="text-xs font-medium text-brand-muted uppercase">Driven Slot Design</div>
+                    <div class="text-xs text-slate-400 mt-1">ตัวละครมีโต้ตอบบนหน้าจอ</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="market-themes" class="space-y-6">
+            <div class="border-l-4 border-amber-500 pl-4">
+                <h3 class="text-2xl font-bold text-white">1. โครงสร้างตลาดและอิทธิพลทางวัฒนธรรมต่อการกำหนดธีม</h3>
+                <p class="text-sm text-brand-muted">วิเคราะห์สัดส่วนธีมยอดนิยมและการประยุกต์ใช้วัฒนธรรม "มูเตลู" ในเชิงมูเก็ตติ้ง (Muketing)</p>
+            </div>
+
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                พฤติกรรมการเล่นเกมสล็อตของผู้บริโภคในประเทศไทยมีรูปแบบเฉพาะตัวที่ผูกติดอยู่กับความเชื่อเรื่องโชคลางและการบูชาสิ่งศักดิ์สิทธิ์ 
+                ผู้พัฒนาเกมชั้นนำได้แปลงสัญลักษณ์ทางมานุษยวิทยามาเป็นองค์ประกอบทัศนศิลป์ภายในเกมเพื่อสร้างจุดเชื่อมโยงทางอารมณ์ 
+                โดยธีมยอดนิยมถูกแบ่งออกเป็น 4 หมวดหมู่หลัก ได้แก่ มูเตลู & เทพเจ้า, อารยธรรมโบราณ & แฟนตาซี, อัตลักษณ์ไทย & ป๊อปคัลเจอร์ และคลาสสิกอาร์เคด
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                <div class="lg:col-span-6 bg-brand-card p-6 rounded-xl border border-brand-border">
+                    <h4 class="text-lg font-semibold text-amber-400 mb-2">สัดส่วนธีมเกมสล็อตที่ได้รับความนิยมสูงสุดในตลาดไทย</h4>
+                    <p class="text-xs text-brand-muted mb-4">ข้อมูลจำลองสัดส่วนตามปริมาณความนิยมของผู้เล่นและการเปิดตัวเกมใหม่</p>
+                    <div class="chart-container">
+                        <canvas id="themeShareChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 space-y-4">
+                    <div class="bg-brand-card p-5 rounded-xl border border-brand-border border-l-4 border-l-amber-400">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-2xl">🐘</span>
+                            <h5 class="font-bold text-amber-300">กลุ่มธีมมูเตลู & เสริมโชคลาภ (Mutelu & Fortune)</h5>
+                        </div>
+                        <p class="text-xs md:text-sm text-slate-300">
+                            การนำองค์ประกอบสิ่งศักดิ์สิทธิ์และสัตว์มงคลมาถ่ายทอด เช่น พระพิฆเนศ (<em>Ganesha Gold</em>), 
+                            เทพไฉ่ซิ่งเอี้ย (<em>Caishen Wins</em>), แมวนำโชค (<em>Lucky Neko</em>) และสัตว์ปีนักษัตร (<em>Fortune Tiger/Ox/Mouse</em>) 
+                            เพื่อสร้างความรู้สึกอุ่นใจและความหวังในการประทานพร
+                        </p>
+                    </div>
+
+                    <div class="bg-brand-card p-5 rounded-xl border border-brand-border border-l-4 border-l-red-500">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-2xl">🏛️</span>
+                            <h5 class="font-bold text-red-400">กลุ่มเทพปกรณัม & ขุมทรัพย์โบราณ (Mythology & Adventure)</h5>
+                        </div>
+                        <p class="text-xs md:text-sm text-slate-300">
+                            เน้นบรรยากาศความลึกลับและการผจญภัยเพื่อกระตุ้นความตื่นเต้น เช่น เทพซุส (<em>Gates of Olympus</em>), 
+                            ตำนานเมดูซ่า (<em>Medusa II</em>) และวิหารมายา/แอซเท็ก (<em>Treasures of Aztec</em>)
+                        </p>
+                    </div>
+
+                    <div class="bg-brand-card p-5 rounded-xl border border-brand-border border-l-4 border-l-cyan-400">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-2xl">🥊</span>
+                            <h5 class="font-bold text-cyan-300">กลุ่มอัตลักษณ์ไทย & ป๊อปคัลเจอร์ (Thai Identity & Pop)</h5>
+                        </div>
+                        <p class="text-xs md:text-sm text-slate-300">
+                            การแปลงศิลปะประจำชาติและชีวิตเมืองเป็นงาน 3D เช่น ศิลปะมวยไทย (<em>Muay Thai Champion</em>), 
+                            ตลาดน้ำ (<em>Thai River Wonders</em>), เทศกาลสงกรานต์ (<em>Songkran Splash</em>) และฮิปฮอป (<em>Hip Hop Panda</em>)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="color-psychology" class="space-y-6">
+            <div class="border-l-4 border-red-500 pl-4">
+                <h3 class="text-2xl font-bold text-white">2. จิตวิทยาการใช้สี ลำดับสายตา และงานภาพ 3D Native</h3>
+                <p class="text-sm text-brand-muted">การกระตุ้นระบบประสาทผ่านโทนสีร้อน-เย็น และเทคโนโลยี Portrait Native สัดส่วน 9:16</p>
+            </div>
+
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                การเลือกใช้โทนสีในเกมสล็อตอ้างอิงตามหลักจิตวิทยาเชิงพฤติกรรมอย่างเคร่งครัด โทนสีร้อนโดยเฉพาะ <strong>สีแดงและสีทอง</strong> 
+                ช่วยเร่งอัตราการเต้นของหัวใจและส่งสัญญาณความมั่งคั่ง ขณะที่โทนสีพาสเทลสดใสช่วยลดความตึงเครียดเชิงการเดิมพัน 
+                นอกจากนี้ เทคโนโลยี Portrait Native ยังช่วยให้การเล่นผ่านสมาร์ทโฟนมือเดียวเป็นไปอย่างลื่นไหล
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <div class="lg:col-span-7 bg-brand-card p-6 rounded-xl border border-brand-border">
+                    <h4 class="text-lg font-semibold text-red-400 mb-2">จิตวิทยาอารมณ์และวัตถุประสงค์ของการใช้โทนสี</h4>
+                    <p class="text-xs text-brand-muted mb-4">ระดับผลกระทบเชิงจิตวิทยาของโทนสีต่างๆ ต่อพฤติกรรมผู้เล่น</p>
+                    <div class="chart-container">
+                        <canvas id="colorPsychologyChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 bg-brand-card p-6 rounded-xl border border-brand-border flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-lg font-semibold text-amber-400 mb-3">การจัดลำดับชั้นทางสายตา (Visual Hierarchy)</h4>
+                        <div class="space-y-3 text-xs md:text-sm">
+                            <div class="p-3 bg-slate-900/80 rounded-lg border border-amber-500/30">
+                                <div class="font-bold text-amber-300 mb-1">⭐ สัญลักษณ์จ่ายรางวัลสูง (High-Pay Symbols)</div>
+                                <p class="text-slate-400">ออกแบบโครงสร้าง 3D มีพื้นผิวประกายทอง กรอบลายละเอียด และเอฟเฟกต์ Glow เรืองรอง แยกแยะได้ทันที</p>
+                            </div>
+                            <div class="p-3 bg-slate-900/80 rounded-lg border border-slate-700">
+                                <div class="font-bold text-slate-300 mb-1">🃏 สัญลักษณ์จ่ายรางวัลต่ำ (Low-Pay Symbols)</div>
+                                <p class="text-slate-400">ตัวอักษรไพ่ (A, K, Q, J) ลดความซับซ้อนของพื้นผิว เพื่อให้กวาดสายตาประเมินผลได้รวดเร็ว</p>
+                            </div>
+                            <div class="p-3 bg-slate-900/80 rounded-lg border border-cyan-500/30">
+                                <div class="font-bold text-cyan-300 mb-1">📱 Mobile-First Portrait Native (9:16)</div>
+                                <p class="text-slate-400">พัฒนาแบบแนวตั้งเฉพาะสำหรับสมาร์ทโฟน ไม่ใช้การบีบอัดหน้าจอคอมพิวเตอร์ รองรับการกดด้วยนิ้วหัวแม่มือเดียว</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="providers" class="space-y-6">
+            <div class="border-l-4 border-cyan-500 pl-4">
+                <h3 class="text-2xl font-bold text-white">3. การวิเคราะห์เปรียบเทียบผู้ให้บริการซอฟต์แวร์ชั้นนำ</h3>
+                <p class="text-sm text-brand-muted">เปรียบเทียบ PG Soft, Pragmatic Play, JILI Slot และ Spadegaming/CQ9</p>
+            </div>
+
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                ผู้พัฒนาแต่ละค่ายมีแนวทางในการสร้างสรรค์สไตล์ศิลปะ ธีม และกลไกเกมที่แตกต่างกันอย่างชัดเจน 
+                PG Soft ครองความเป็นผู้นำด้านภาพ 3D Native สำหรับมือถือ ในขณะที่ Pragmatic Play โดดเด่นด้านระบบ Pay Anywhere และความผันผวนสูง
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <div class="lg:col-span-6 bg-brand-card p-6 rounded-xl border border-brand-border">
+                    <h4 class="text-lg font-semibold text-cyan-400 mb-2">มิติความเชี่ยวชาญทางเทคนิคและสไตล์ศิลปะของแต่ละค่าย</h4>
+                    <p class="text-xs text-brand-muted mb-4">การประเมินคะแนนเชิงเปรียบเทียบใน 5 มิติหลัก</p>
+                    <div class="chart-container">
+                        <canvas id="providerRadarChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 bg-brand-card p-6 rounded-xl border border-brand-border">
+                    <h4 class="text-lg font-semibold text-purple-400 mb-2">เปรียบเทียบช่วง RTP (%) และเพดานตัวคูณรางวัล</h4>
+                    <p class="text-xs text-brand-muted mb-4">ช่วงการจ่ายเงินคืนแก่ผู้เล่น (Return to Player) และศักยภาพในการจ่ายรางวัล</p>
+                    <div class="chart-container">
+                        <canvas id="providerRtpChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto bg-brand-card rounded-xl border border-brand-border p-4">
+                <table class="w-full text-left border-collapse text-xs md:text-sm">
+                    <thead>
+                        <tr class="border-b border-brand-border text-amber-400">
+                            <th class="p-3 font-semibold">ผู้ให้บริการ</th>
+                            <th class="p-3 font-semibold">เกมยอดนิยมในไทย</th>
+                            <th class="p-3 font-semibold">สไตล์ศิลปะ & จานสี</th>
+                            <th class="p-3 font-semibold">กลไกเกม & จุดเด่น</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-brand-border/50 text-slate-300">
+                        <tr class="hover:bg-slate-800/40">
+                            <td class="p-3 font-bold text-white">PG Soft</td>
+                            <td class="p-3">Mahjong Ways, Lucky Neko, Treasures of Aztec</td>
+                            <td class="p-3">3D AAA-Calibre, ตัวละคร 3D โต้ตอบ, โทนทอง/แดง/นีออน</td>
+                            <td class="p-3">Portrait Native, Cascading Reels, Multiplier Progression</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40">
+                            <td class="p-3 font-bold text-white">Pragmatic Play</td>
+                            <td class="p-3">Gates of Olympus, Sweet Bonanza, Sugar Rush</td>
+                            <td class="p-3">งานภาพความละเอียดสูง, จานสีสดใส/พาสเทล, เอฟเฟกต์อัศนีบาต</td>
+                            <td class="p-3">Pay Anywhere, Tumble Mechanics, Volatility สูงมาก</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40">
+                            <td class="p-3 font-bold text-white">JILI Slot</td>
+                            <td class="p-3">Roma X, Super Ace, Fortune Gems</td>
+                            <td class="p-3">กราฟิกสไตล์อาร์เคด (Arcade), สีสันเข้มข้น, ตัวเลขชัดเจน</td>
+                            <td class="p-3">Combination Multipliers, Elimination Cascades, ความเร็วสูง</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40">
+                            <td class="p-3 font-bold text-white">Spadegaming / CQ9</td>
+                            <td class="p-3">Lucky Cai Shen, Fafafa, Lucky Koi</td>
+                            <td class="p-3">งานลายเส้นจีนร่วมสมัย, สีแดงจัดและทองประกาย</td>
+                            <td class="p-3">Fixed Paylines, Expanding Wilds, ความเสี่ยงปานกลางถึงต่ำ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="mechanics-fx" class="space-y-6">
+            <div class="border-l-4 border-purple-500 pl-4">
+                <h3 class="text-2xl font-bold text-white">4. การผสานรวมกลไกทางวิศวกรรมเกมเข้ากับเอฟเฟกต์ทัศนศิลป์</h3>
+                <p class="text-sm text-brand-muted">ขั้นตอนการสร้างความอิ่มเอมใจเชิงสายตา (Visual Satisfaction Sequence)</p>
+            </div>
+
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                ความสำเร็จของการออกแบบสล็อตเกิดจากการเชื่อมโยงกลไกสุ่มรางวัล (RNG) เข้ากับปฏิกิริยาทางทัศนศิลป์ 
+                เมื่อผู้เล่นชนะรางวัล ระบบจะไม่เพียงแสดงตัวเลข แต่จะใช้เอฟเฟกต์ภาพและเสียงกระตุ้นความรู้สึกสำเร็จอย่างเป็นขั้นตอน
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-brand-card p-5 rounded-xl border border-brand-border relative">
+                    <div class="text-amber-400 font-extrabold text-2xl mb-2">01</div>
+                    <h4 class="font-bold text-white mb-2">Symbol Match & Burst</h4>
+                    <p class="text-xs text-brand-muted">สัญลักษณ์ที่จับคู่ชนะตามกฎ Pay Anywhere หรือ Cascade จะแตกสลายด้วยเอฟเฟกต์คริสตัลกระจาย</p>
+                </div>
+                <div class="bg-brand-card p-5 rounded-xl border border-brand-border relative">
+                    <div class="text-red-400 font-extrabold text-2xl mb-2">02</div>
+                    <h4 class="font-bold text-white mb-2">Tumble & Gravity Drop</h4>
+                    <p class="text-xs text-brand-muted">สัญลักษณ์ด้านบนร่วงหล่นลงมาแทนที่แบบมีน้ำหนัก ด้วยการประมวลผลฟิสิกส์ 3D ที่สมจริง</p>
+                </div>
+                <div class="bg-brand-card p-5 rounded-xl border border-brand-border relative">
+                    <div class="text-cyan-400 font-extrabold text-2xl mb-2">03</div>
+                    <h4 class="font-bold text-white mb-2">Multiplier Glow Meter</h4>
+                    <p class="text-xs text-brand-muted">แถบสะสมตัวคูณส่องสว่าง เปลี่ยนสีจากเงินเป็นทองเรืองรอง ยืนยันการทวีคูณของรางวัล</p>
+                </div>
+                <div class="bg-brand-card p-5 rounded-xl border border-brand-border relative">
+                    <div class="text-purple-400 font-extrabold text-2xl mb-2">04</div>
+                    <h4 class="font-bold text-white mb-2">Bonus Scene Transition</h4>
+                    <p class="text-xs text-brand-muted">การตัดเข้าสู่โหมด Free Spins เปลี่ยนบรรยากาศฉากหลังเป็นทองคำหรือพายุหมุนเพื่อสร้างความตื่นเต้นสูงสุด</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-6">
+            <div class="border-l-4 border-amber-400 pl-4">
+                <h3 class="text-2xl font-bold text-white">5. บทสรุปและแนวโน้มการพัฒนาในอนาคต</h3>
+                <p class="text-sm text-brand-muted">3 ทิศทางหลักในการวิวัฒนาการงานศิลป์เกมสล็อตในตลาดไทย</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-brand-card p-6 rounded-xl border border-brand-border hover:border-amber-400 transition-all">
+                    <div class="text-3xl mb-3">🎨</div>
+                    <h4 class="font-bold text-amber-300 text-base mb-2">Hybrid Cultural Themes</h4>
+                    <p class="text-xs md:text-sm text-slate-300">
+                        การผสมผสานความเชื่อดั้งเดิมเข้ากับศิลปะร่วมสมัย เช่น สตรีทอาร์ต นีออนไซเบอร์พังก์ หรือป๊อปแอนิเมชัน เพื่อขยายฐานผู้เล่นรุ่นใหม่
+                    </p>
+                </div>
+
+                <div class="bg-brand-card p-6 rounded-xl border border-brand-border hover:border-red-400 transition-all">
+                    <div class="text-3xl mb-3">🎮</div>
+                    <h4 class="font-bold text-red-400 text-base mb-2">Narrative Progression</h4>
+                    <p class="text-xs md:text-sm text-slate-300">
+                        การพัฒนาระบบเล่าเรื่องและการทำภารกิจ โดยมีตัวละครดำเนินเรื่อง และฉากหลังที่เปลี่ยนสไตล์ตามระดับความสำเร็จของผู้เล่น
+                    </p>
+                </div>
+
+                <div class="bg-brand-card p-6 rounded-xl border border-brand-border hover:border-cyan-400 transition-all">
+                    <div class="text-3xl mb-3">🤖</div>
+                    <h4 class="font-bold text-cyan-300 text-base mb-2">AI-Assisted Art Feedback</h4>
+                    <p class="text-xs md:text-sm text-slate-300">
+                        การประยุกต์ใช้ปัญญาประดิษฐ์ในการสร้างสรรค์ฉากและตอบสนองทางทัศนศิลป์แบบเฉพาะบุคคล (Personalized Visual Feedback)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="max-w-7xl mx-auto px-4 mt-16 pt-6 border-t border-brand-border text-center text-xs text-brand-muted">
+        <p>รายงานวิเคราะห์เชิงลึก: ธีม สไตล์ศิลปะ และจิตวิทยาการออกแบบเกมสล็อตในประเทศไทย | พัฒนาด้วย Tailwind CSS & Chart.js</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            const tooltipPluginConfig = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            const themeShareCtx = document.getElementById('themeShareChart').getContext('2d');
+            new Chart(themeShareCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        ['มูเตลู &', 'สิ่งศักดิ์สิทธิ์'],
+                        ['เทพปกรณัม &', 'อารยธรรมโบราณ'],
+                        ['อัตลักษณ์ไทย &', 'ป๊อปคัลเจอร์'],
+                        ['คลาสสิก &', 'อาร์เคด']
+                    ],
+                    datasets: [{
+                        data: [40, 30, 20, 10],
+                        backgroundColor: ['#f59e0b', '#ef4444', '#06b6d4', '#8b5cf6'],
+                        borderColor: '#1e293b',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        ...tooltipPluginConfig.plugins,
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#f8fafc',
+                                font: { family: 'Kanit', size: 11 }
+                            }
+                        }
+                    }
+                }
+            });
+
+            const colorPsychologyCtx = document.getElementById('colorPsychologyChart').getContext('2d');
+            new Chart(colorPsychologyCtx, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        ['สีทอง (Gold):', 'ความมั่งคั่ง'],
+                        ['สีแดง (Red):', 'ความเร่งด่วน'],
+                        ['พาสเทล (Pastel):', 'ผ่อนคลาย'],
+                        ['สีฟ้า (Blue):', 'ความมั่นใจ'],
+                        ['นีออน (Neon):', 'ความทันสมัย']
+                    ],
+                    datasets: [{
+                        label: 'ระดับดึงดูดเชิงจิตวิทยา (%)',
+                        data: [95, 90, 75, 70, 85],
+                        backgroundColor: ['#f59e0b', '#ef4444', '#f43f5e', '#06b6d4', '#8b5cf6'],
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            ticks: { color: '#94a3b8', font: { family: 'Kanit' } },
+                            grid: { color: '#334155' }
+                        },
+                        y: {
+                            ticks: { color: '#f8fafc', font: { family: 'Kanit' } },
+                            grid: { display: false }
+                        }
+                    },
+                    plugins: {
+                        ...tooltipPluginConfig.plugins,
+                        legend: { display: false }
+                    }
+                }
+            });
+
+            const providerRadarCtx = document.getElementById('providerRadarChart').getContext('2d');
+            new Chart(providerRadarCtx, {
+                type: 'radar',
+                data: {
+                    labels: [
+                        ['Mobile Native', 'Optimization'],
+                        ['3D Graphics', 'Quality'],
+                        ['High Multipliers', 'Cap'],
+                        ['Thai Culture', 'Adaptation'],
+                        ['Arcade Speed', 'Pacing']
+                    ],
+                    datasets: [
+                        {
+                            label: 'PG Soft',
+                            data: [98, 95, 85, 92, 88],
+                            borderColor: '#f59e0b',
+                            backgroundColor: 'rgba(245, 158, 11, 0.2)',
+                            pointBackgroundColor: '#f59e0b'
+                        },
+                        {
+                            label: 'Pragmatic Play',
+                            data: [85, 90, 98, 70, 82],
+                            borderColor: '#ef4444',
+                            backgroundColor: 'rgba(239, 68, 68, 0.2)',
+                            pointBackgroundColor: '#ef4444'
+                        },
+                        {
+                            label: 'JILI Slot',
+                            data: [80, 75, 80, 75, 95],
+                            borderColor: '#06b6d4',
+                            backgroundColor: 'rgba(6, 182, 212, 0.2)',
+                            pointBackgroundColor: '#06b6d4'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: '#334155' },
+                            grid: { color: '#334155' },
+                            pointLabels: {
+                                color: '#f8fafc',
+                                font: { family: 'Kanit', size: 10 }
+                            },
+                            ticks: { display: false, backdropColor: 'transparent' }
+                        }
+                    },
+                    plugins: {
+                        ...tooltipPluginConfig.plugins,
+                        legend: {
+                            position: 'bottom',
+                            labels: { color: '#f8fafc', font: { family: 'Kanit', size: 11 } }
+                        }
+                    }
+                }
+            });
+
+            const providerRtpCtx = document.getElementById('providerRtpChart').getContext('2d');
+            new Chart(providerRtpCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['PG Soft', 'Pragmatic Play', 'JILI Slot', 'Spadegaming'],
+                    datasets: [
+                        {
+                            label: 'RTP สูงสุด (%)',
+                            data: [97.4, 96.6, 97.0, 96.5],
+                            backgroundColor: '#f59e0b'
+                        },
+                        {
+                            label: 'RTP ต่ำสุด (%)',
+                            data: [95.0, 94.5, 95.2, 95.0],
+                            backgroundColor: '#334155'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            ticks: { color: '#f8fafc', font: { family: 'Kanit' } },
+                            grid: { display: false }
+                        },
+                        y: {
+                            min: 90,
+                            max: 100,
+                            ticks: { color: '#94a3b8', font: { family: 'Kanit' } },
+                            grid: { color: '#334155' }
+                        }
+                    },
+                    plugins: {
+                        ...tooltipPluginConfig.plugins,
+                        legend: {
+                            position: 'bottom',
+                            labels: { color: '#f8fafc', font: { family: 'Kanit', size: 11 } }
+                        }
+                    }
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
