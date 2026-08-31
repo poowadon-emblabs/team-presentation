@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In-Depth Report: Online Gambling Platform Ecosystem in Thailand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f3ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#1e1b4b',
+                        },
+                        accent: {
+                            rose: '#f43f5e',
+                            emerald: '#10b981',
+                            amber: '#f59e0b',
+                            cyan: '#06b6d4',
+                            purple: '#a855f7'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 360px;
+            }
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-hover:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.15);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white min-h-screen">
+
+    <!-- Top Navigation Sticky Bar -->
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 px-4 py-3">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl">🎲</span>
+                <div>
+                    <h1 class="text-lg font-bold bg-gradient-to-r from-indigo-400 to-rose-400 bg-clip-text text-transparent">
+                        TH-GAMBLING ECOSYSTEM ANALYTICS
+                    </h1>
+                    <p class="text-xs text-slate-400">Architecture, Top Operators, Financial Flow & Regulatory Enforcement</p>
+                </div>
+            </div>
+            <nav class="hidden lg:flex space-x-5 text-xs font-medium text-slate-300">
+                <a href="#architecture" class="hover:text-indigo-400 transition-colors">Architecture</a>
+                <a href="#top5" class="hover:text-amber-400 transition-colors">Top 5 Platforms</a>
+                <a href="#games" class="hover:text-indigo-400 transition-colors">Services & Games</a>
+                <a href="#financial" class="hover:text-indigo-400 transition-colors">Financial System</a>
+                <a href="#traffic" class="hover:text-indigo-400 transition-colors">Traffic & Demographics</a>
+                <a href="#enforcement" class="hover:text-indigo-400 transition-colors">Enforcement</a>
+                <a href="#references" class="hover:text-indigo-400 transition-colors">References</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 space-y-12">
+
+        <!-- Hero & Intro Section -->
+        <section class="text-center space-y-4 max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-semibold tracking-wide uppercase">
+                <span>🚨</span> Digital Underground Ecosystem Intelligence Briefing
+            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-50 tracking-tight leading-tight">
+                Online Gambling Platform Ecosystem in Thailand
+            </h2>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                An analytical breakdown of 3-Tier technical architecture, top 5 market-leading operator groups, 
+                automated payment gateways (PGWs), Black-Hat SEO domain hijacking, and government cyber-enforcement.
+            </p>
+        </section>
+
+        <!-- Executive Summary Stats Grid -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="glass-card glass-card-hover rounded-xl p-6 border-l-4 border-l-indigo-500 transition-all">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-slate-400 text-xs font-bold uppercase tracking-wider">Online Casino Players</span>
+                    <span class="text-xl">👥</span>
+                </div>
+                <div class="text-3xl font-black text-indigo-400 mb-1">5.66 Million</div>
+                <p class="text-xs text-slate-400">6.9x growth since 2019 (706k first-time gamblers added in 2023)</p>
+            </div>
+
+            <div class="glass-card glass-card-hover rounded-xl p-6 border-l-4 border-l-emerald-500 transition-all">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-slate-400 text-xs font-bold uppercase tracking-wider">Sports Gambling Volume</span>
+                    <span class="text-xl">💰</span>
+                </div>
+                <div class="text-3xl font-black text-emerald-400 mb-1">฿270 Billion</div>
+                <p class="text-xs text-slate-400">Highest volume category in TH (Online casino >฿107B)</p>
+            </div>
+
+            <div class="glass-card glass-card-hover rounded-xl p-6 border-l-4 border-l-amber-500 transition-all">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-slate-400 text-xs font-bold uppercase tracking-wider">Youth & Gen Z Exposure</span>
+                    <span class="text-xl">🎓</span>
+                </div>
+                <div class="text-3xl font-black text-amber-400 mb-1">&gt; 4.0 Million</div>
+                <p class="text-xs text-slate-400">High-risk youth cohort vulnerable to Gambling Disorder</p>
+            </div>
+
+            <div class="glass-card glass-card-hover rounded-xl p-6 border-l-4 border-l-rose-500 transition-all">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-slate-400 text-xs font-bold uppercase tracking-wider">Domain Blocks (FY2024)</span>
+                    <span class="text-xl">🛡️</span>
+                </div>
+                <div class="text-3xl font-black text-rose-400 mb-1">62,215 URLs</div>
+                <p class="text-xs text-slate-400">30x increase YoY with ฿1.5B in bank assets frozen</p>
+            </div>
+        </section>
+
+        <!-- SECTION 1: Architecture & Key Players -->
+        <section id="architecture" class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+            <div class="border-b border-slate-800 pb-4">
+                <div class="flex items-center space-x-3">
+                    <span class="p-2 rounded-lg bg-indigo-500/10 text-indigo-400 text-xl">🏛️</span>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-100">1. Provider Architecture & Three-Tier Technical Infrastructure</h3>
+                        <p class="text-xs sm:text-sm text-slate-400">Supply chain analysis from RNG game engine developers down to consumer-facing platforms</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-sm text-slate-300 leading-relaxed space-y-3">
+                <p>
+                    The online gambling industry in Thailand operates via a modular, multi-tier tech stack utilizing 
+                    <strong>Single API Integration</strong> and <strong>Seamless Wallet</strong> technology integrated into Player Account Management (PAM) software. 
+                    This enables users to play games across dozens of studios without transferring funds between separate sub-wallets.
+                </p>
+            </div>
+
+            <!-- Architecture Diagram Block -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+                <!-- Tier 1 -->
+                <div class="bg-slate-900/80 border border-indigo-500/30 rounded-xl p-5 space-y-3 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-indigo-500 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-lg">
+                        Tier 1: Upstream
+                    </div>
+                    <div class="text-2xl">⚙️</div>
+                    <h4 class="font-bold text-indigo-300 text-base">B2B Game Content Providers</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Develop RNG math models, HTML5 graphic engines, live video streaming, and host core gaming logic.
+                    </p>
+                    <div class="pt-2 border-t border-slate-800">
+                        <span class="text-[11px] text-slate-400 block font-semibold mb-1">Key Game Studios in TH:</span>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs">PG Soft (Malta)</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs">SA Gaming</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs">Pragmatic Play</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs">BetRadar</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tier 2 -->
+                <div class="bg-slate-900/80 border border-purple-500/30 rounded-xl p-5 space-y-3 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-purple-500 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-lg">
+                        Tier 2: Midstream
+                    </div>
+                    <div class="text-2xl">🔗</div>
+                    <h4 class="font-bold text-purple-300 text-base">System Aggregators</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Bundle 10,000+ games across 250+ providers into unified API hubs with back-office CRM systems.
+                    </p>
+                    <div class="pt-2 border-t border-slate-800">
+                        <span class="text-[11px] text-slate-400 block font-semibold mb-1">B2B Software Providers:</span>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs">SoftGamings</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs">LuckyStreak</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs">GR8 Tech</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs">St8.io</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="bg-slate-900/80 border border-rose-500/30 rounded-xl p-5 space-y-3 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-rose-500 text-white text-[10px] font-extrabold uppercase px-3 py-1 rounded-bl-lg">
+                        Tier 3: Downstream
+                    </div>
+                    <div class="text-2xl">📱</div>
+                    <h4 class="font-bold text-rose-300 text-base">B2C Platform Operators</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Customer-facing bookmakers responsible for localized UI, digital marketing, promotions, and player payouts.
+                    </p>
+                    <div class="pt-2 border-t border-slate-800">
+                        <span class="text-[11px] text-slate-400 block font-semibold mb-1">Major Brands & Networks:</span>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs">UFABET</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs">BK8</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs">Fun88</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs">69pgslot</span>
+                            <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs">Agent Sites</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-300">
+                <div class="flex items-center space-x-2">
+                    <span class="font-bold text-indigo-400">User Access Flow:</span>
+                    <span>URL Scheme Mode ( Mobile Apps )</span>
+                </div>
+                <div class="text-slate-500 font-bold hidden md:block">➔</div>
+                <div class="flex items-center space-x-2">
+                    <span>Web Lobby Mode ( Mobile Browsers )</span>
+                </div>
+                <div class="text-slate-500 font-bold hidden md:block">➔</div>
+                <div class="flex items-center space-x-2">
+                    <span class="px-2 py-1 bg-indigo-500/20 text-indigo-300 rounded border border-indigo-500/30">Single API Call</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Top 5 Ranking Platforms -->
+        <section id="top5" class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+            <div class="border-b border-slate-800 pb-4">
+                <div class="flex items-center space-x-3">
+                    <span class="p-2 rounded-lg bg-amber-500/10 text-amber-400 text-xl">🏆</span>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-100">2. Top 5 Ranking Online Gambling Platforms in Thailand</h3>
+                        <p class="text-xs sm:text-sm text-slate-400">Ranked by estimated market share, search traffic volume, and agent network penetration</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-sm text-slate-300 leading-relaxed">
+                While over 10,000 active domain mirrors operate in Thailand at any given time, the market is overwhelmingly controlled by 
+                <strong>5 Master Operator Networks</strong>. These umbrella platforms supply API feeds, back-office infrastructure, and liquidity to thousands of sub-agents, 
+                capturing over 85% of total domestic transaction volume.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <!-- Bar Chart: Top 5 Market Share -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-slate-200 text-center">Estimated Market Share of Top 5 Platforms in Thailand (%)</h4>
+                    <div class="chart-container">
+                        <canvas id="top5Chart"></canvas>
+                    </div>
+                    <p class="text-[11px] text-slate-400 text-center italic">
+                        *Estimates derived from organic search volume, agent network footprint, and financial tracking data (CGS & DE Ministry 2024-2025)
+                    </p>
+                </div>
+
+                <!-- Top 5 Detailed Platform Ranking List -->
+                <div class="space-y-3">
+                    <!-- Rank 1 -->
+                    <div class="bg-slate-900/80 p-4 rounded-xl border-l-4 border-l-amber-500 border border-slate-800 flex items-start justify-between gap-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl font-black text-amber-400 w-6 text-center">#1</span>
+                            <div>
+                                <h5 class="font-bold text-slate-100 text-sm flex items-center gap-2">
+                                    UFABET
+                                    <span class="px-2 py-0.5 bg-amber-500/20 text-amber-300 text-[10px] rounded font-mono">Market Leader</span>
+                                </h5>
+                                <p class="text-xs text-slate-400 mt-0.5">Dominant market leader in sports betting and live baccarat with over 3,000 active mirror domains and sub-agent networks.</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-amber-400 whitespace-nowrap">35% Share</span>
+                    </div>
+
+                    <!-- Rank 2 -->
+                    <div class="bg-slate-900/80 p-4 rounded-xl border-l-4 border-l-indigo-500 border border-slate-800 flex items-start justify-between gap-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl font-black text-indigo-400 w-6 text-center">#2</span>
+                            <div>
+                                <h5 class="font-bold text-slate-100 text-sm flex items-center gap-2">
+                                    BK8
+                                    <span class="px-2 py-0.5 bg-indigo-500/20 text-indigo-300 text-[10px] rounded font-mono">Regional Giant</span>
+                                </h5>
+                                <p class="text-xs text-slate-400 mt-0.5">Pan-Asian betting operator utilizing English Premier League sponsorships and high-end API integrations for casino & slots.</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-indigo-400 whitespace-nowrap">18% Share</span>
+                    </div>
+
+                    <!-- Rank 3 -->
+                    <div class="bg-slate-900/80 p-4 rounded-xl border-l-4 border-l-emerald-500 border border-slate-800 flex items-start justify-between gap-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl font-black text-emerald-400 w-6 text-center">#3</span>
+                            <div>
+                                <h5 class="font-bold text-slate-100 text-sm flex items-center gap-2">
+                                    Fun88
+                                    <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-300 text-[10px] rounded font-mono">Sports Specialist</span>
+                                </h5>
+                                <p class="text-xs text-slate-400 mt-0.5">Long-established operator focused on football sportsbook odds, live match streaming, and esports betting markets.</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-400 whitespace-nowrap">14% Share</span>
+                    </div>
+
+                    <!-- Rank 4 -->
+                    <div class="bg-slate-900/80 p-4 rounded-xl border-l-4 border-l-rose-500 border border-slate-800 flex items-start justify-between gap-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl font-black text-rose-400 w-6 text-center">#4</span>
+                            <div>
+                                <h5 class="font-bold text-slate-100 text-sm flex items-center gap-2">
+                                    Direct PG Slot Network (69pgslot)
+                                    <span class="px-2 py-0.5 bg-rose-500/20 text-rose-300 text-[10px] rounded font-mono">Gen Z Favorite</span>
+                                </h5>
+                                <p class="text-xs text-slate-400 mt-0.5">Mobile-first slot platform hub leveraging PG Soft titles with micro-deposits via TrueMoney Wallet targeting youth demographics.</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-rose-400 whitespace-nowrap">12% Share</span>
+                    </div>
+
+                    <!-- Rank 5 -->
+                    <div class="bg-slate-900/80 p-4 rounded-xl border-l-4 border-l-cyan-500 border border-slate-800 flex items-start justify-between gap-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl font-black text-cyan-400 w-6 text-center">#5</span>
+                            <div>
+                                <h5 class="font-bold text-slate-100 text-sm flex items-center gap-2">
+                                    W88 / M88
+                                    <span class="px-2 py-0.5 bg-cyan-500/20 text-cyan-300 text-[10px] rounded font-mono">Veteran Operator</span>
+                                </h5>
+                                <p class="text-xs text-slate-400 mt-0.5">Pioneer Southeast Asian betting platform offering live dealer tables, online lottery schemes, and VIP high-roller suites.</p>
+                            </div>
+                        </div>
+                        <span class="text-xs font-bold text-cyan-400 whitespace-nowrap">9% Share</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Game Services & Popular Categories -->
+        <section id="games" class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+            <div class="border-b border-slate-800 pb-4">
+                <div class="flex items-center space-x-3">
+                    <span class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 text-xl">🎰</span>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-100">3. Service Formats & Popular Game Categories</h3>
+                        <p class="text-xs sm:text-sm text-slate-400">RNG mechanics, progressive multipliers, and player participation metrics by game category</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-sm text-slate-300 leading-relaxed">
+                Platforms tailor game offerings to specific demographic preferences. 
+                <strong>Slot Machines</strong> attract the highest total user count due to casual mobile accessibility, 
+                whereas <strong>Sports Betting (Sportsbook)</strong> accounts for the largest transaction volume at ฿270 Billion.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <!-- Chart Container: Game Types -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-slate-200 text-center">Player Preference Breakdown by Game Category (%)</h4>
+                    <div class="chart-container">
+                        <canvas id="gameTypesChart"></canvas>
+                    </div>
+                    <p class="text-[11px] text-slate-400 text-center italic">
+                        *Source: Center for Gambling Studies (CGS), Chulalongkorn University Survey (2023)
+                    </p>
+                </div>
+
+                <!-- Text Breakdown Cards -->
+                <div class="space-y-4">
+                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2">
+                        <div class="flex justify-between items-center">
+                            <h5 class="font-bold text-emerald-400 text-sm">🎰 Slot Machines & Gambling Games (72.0%)</h5>
+                            <span class="text-xs text-rose-400 font-semibold">Highest Youth Growth</span>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Utilize Cascading Reels, Progressive Multipliers, and "Bonus Buy" mechanics. 
+                            Top games include <em>Mahjong Ways, Fortune Tiger, and Lucky Neko</em> by PG Soft.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2">
+                        <div class="flex justify-between items-center">
+                            <h5 class="font-bold text-indigo-400 text-sm">🃏 Live Baccarat & Card Games (35.2%)</h5>
+                            <span class="text-xs text-slate-400">15-30 Second Round Velocity</span>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            HD video streaming from offshore casinos. Fast gameplay cycles encourage rapid re-betting and yield high turnover per active user.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2">
+                        <div class="flex justify-between items-center">
+                            <h5 class="font-bold text-amber-400 text-sm">🎲 Hi-Lo / Traditional Dice Games (16.0%)</h5>
+                            <span class="text-xs text-slate-400">Digitized Local Gambling</span>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Adaptation of traditional Thai dice gambling for digital platforms, maintaining popularity among working-class and older demographic segments.
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900/60 p-4 rounded-xl border border-slate-800 space-y-2">
+                        <div class="flex justify-between items-center">
+                            <h5 class="font-bold text-cyan-400 text-sm">🎟️ Online Lottery & Stock Betting (25.4%)</h5>
+                            <span class="text-xs text-emerald-400 font-semibold">24/7 Drawing Cycles</span>
+                        </div>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            Government lottery sales online account for ฿21.9 Billion (13.7% market). 
+                            Private platforms expand this with 24/7 foreign stock lotteries (Yi-Kee).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Financial Architecture & Money Evasion -->
+        <section id="financial" class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+            <div class="border-b border-slate-800 pb-4">
+                <div class="flex items-center space-x-3">
+                    <span class="p-2 rounded-lg bg-amber-500/10 text-amber-400 text-xl">💳</span>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-100">4. Financial Architecture & Evasion Mechanisms</h3>
+                        <p class="text-xs sm:text-sm text-slate-400">Automated deposit systems, facial-recognition bypass methods, and cross-border money laundering</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-sm text-slate-300 leading-relaxed">
+                Thailand's 95%+ penetration of <strong>PromptPay</strong> and <strong>Mobile Banking</strong> powers instant gambling settlement. 
+                Operators utilize illicit <strong>Automated Payment Gateway Providers (PGWs)</strong> to credit player accounts via Callback APIs, 
+                routing net profits into stablecoins (USDT TRC-20) to bypass banking regulations.
+            </p>
+
+            <!-- Money Flow Steps Diagram -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 my-6">
+                <!-- Step 1 -->
+                <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 space-y-2 relative">
+                    <div class="w-7 h-7 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center text-xs font-bold">1</div>
+                    <h5 class="font-bold text-slate-200 text-xs">Dynamic QR Code</h5>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                        Player scans generated PromptPay QR. Callback API automatically credits platform wallet in real-time.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 space-y-2 relative">
+                    <div class="w-7 h-7 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center text-xs font-bold">2</div>
+                    <h5 class="font-bold text-slate-200 text-xs">Automated PGWs</h5>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                        Illicit gateways (e.g., <em>Ask Me Pay, HengPay</em>) process up to ฿5 Billion monthly via front companies.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 space-y-2 relative">
+                    <div class="w-7 h-7 rounded-full bg-rose-500/20 border border-rose-500/40 text-rose-400 flex items-center justify-center text-xs font-bold">3</div>
+                    <h5 class="font-bold text-rose-300 text-xs">Mule Account Networks</h5>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                        Transfers split below ฿50,000 to bypass mandatory facial recognition (Biometric rules by Bank of Thailand).
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-4 space-y-2 relative">
+                    <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center text-xs font-bold">4</div>
+                    <h5 class="font-bold text-emerald-300 text-xs">USDT Crypto Settlement</h5>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">
+                        Fiat converted into USDT stablecoins over TRC-20 network and transferred to offshore wallets in SE Asia.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Detailed Table for Payment Mechanisms -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs text-slate-300 border-collapse">
+                    <thead>
+                        <tr class="bg-slate-900 text-slate-400 border-b border-slate-800">
+                            <th class="p-3">Payment Channel</th>
+                            <th class="p-3">Underlying Technology & Mechanism</th>
+                            <th class="p-3">Evasion Strategy & Risk Factor</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800">
+                        <tr>
+                            <td class="p-3 font-semibold text-slate-200">Thai QR / PromptPay</td>
+                            <td class="p-3">Real-time mobile banking API integration</td>
+                            <td class="p-3 text-slate-400">High speed, but leaves direct transaction trail for law enforcement</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold text-indigo-300">Automated PGWs (HengPay / Ask Me Pay)</td>
+                            <td class="p-3">Corporate shell accounts connected via payment APIs</td>
+                            <td class="p-3 text-slate-400">Obfuscates ultimate beneficiary through layered transactions</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold text-rose-300">Mule Account Networks (Mule Bank Accounts)</td>
+                            <td class="p-3">Rented individual accounts bundled with registered SIM cards</td>
+                            <td class="p-3 text-rose-400">Micro-transactions under ฿50k evade Biometric Verification rules</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold text-emerald-300">USDT (TRC-20 Blockchain)</td>
+                            <td class="p-3">Cross-border decentralized cryptocurrency transfers</td>
+                            <td class="p-3 text-slate-400">Borderless, difficult to freeze, used for offshore capital flight</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Traffic, Growth Trends & Regional Demographics -->
+        <section id="traffic" class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+            <div class="border-b border-slate-800 pb-4">
+                <div class="flex items-center space-x-3">
+                    <span class="p-2 rounded-lg bg-rose-500/10 text-rose-400 text-xl">📈</span>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-100">5. Traffic Volume, Demographic Statistics & Growth Trends</h3>
+                        <p class="text-xs sm:text-sm text-slate-400">Historical growth trajectory from 2019 to 2023 and geographic breakdown across Thailand's 5 regions</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-sm text-slate-300 leading-relaxed">
+                National surveys indicate online casino participation expanded from <strong>0.82 million users</strong> in 2019 to 
+                <strong>5.66 million users</strong> in 2023, accelerated by pandemic lockdowns. 
+                Overall, <strong>63.1% of Thais aged 15+ (34.5 million people)</strong> participate in some form of gambling.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Line Chart: Historical Growth -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-slate-200 text-center">Online Casino Active Player Trajectory (Millions)</h4>
+                    <div class="chart-container">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                    <p class="text-[11px] text-slate-400 text-center italic">
+                        *135% YoY spike recorded during 2021 COVID lockdowns, reaching 5.66M in 2023
+                    </p>
+                </div>
+
+                <!-- Horizontal Bar Chart: Regional Demographics -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-slate-200 text-center">Gambling Participation Rate by Thai Region (% Population)</h4>
+                    <div class="chart-container">
+                        <canvas id="regionalChart"></canvas>
+                    </div>
+                    <p class="text-[11px] text-slate-400 text-center italic">
+                        *Bangkok Met. leads in percentage (68.2%), while Isan (Northeast) leads in total count (12.12M users)
+                    </p>
+                </div>
+            </div>
+
+            <!-- Youth Vulnerability Highlight Card -->
+            <div class="bg-rose-500/10 border border-rose-500/20 rounded-xl p-5 flex flex-col sm:flex-row items-center gap-4">
+                <div class="text-4xl">⚠️</div>
+                <div class="space-y-1">
+                    <h5 class="font-bold text-rose-300 text-sm">Critical Vulnerability Cohort: Gen Z & Youth (&gt; 4.0 Million)</h5>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        47% of youth aged 15-25 report peer influence as their primary driver for joining gambling platforms. 
+                        With over 99% of Thais reporting exposure to gamblers in their immediate social circles, digital gambling is increasingly misperceived as casual mobile entertainment.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: Black-Hat SEO vs Government Enforcement -->
+        <section id="enforcement" class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+            <div class="border-b border-slate-800 pb-4">
+                <div class="flex items-center space-x-3">
+                    <span class="p-2 rounded-lg bg-cyan-500/10 text-cyan-400 text-xl">🛡️</span>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-100">6. Cyber Warfare: Black-Hat SEO vs Government Enforcement</h3>
+                        <p class="text-xs sm:text-sm text-slate-400">Spamdexing tactics on government domains and Ministry of DE enforcement metrics</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                <!-- Text Commentary: Black-Hat SEO Techniques -->
+                <div class="space-y-4">
+                    <h4 class="font-bold text-slate-200 text-base flex items-center gap-2">
+                        <span>🔍</span> Black-Hat SEO Tactics (Doorway Pages)
+                    </h4>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Black-hat syndicates exploit security vulnerabilities in government (<code>.go.th</code>) 
+                        and academic (<code>.ac.th</code>) servers. Because search engines grant high domain authority to these TLDs, 
+                        hackers embed <strong>Doorway Pages</strong> targeting keywords like <em>"baccarat formula site:.go.th"</em>.
+                    </p>
+                    <div class="bg-slate-900/90 p-3 rounded-lg border border-slate-800 text-xs font-mono text-cyan-300">
+                         User Search ➔ Click Gov URL ➔ 301 Redirect ➔ Offshore Casino Platform
+                    </div>
+                    <p class="text-xs text-slate-400">
+                        Promotions are further amplified by social media influencers on TikTok, YouTube, and automated LINE Official Account spam.
+                    </p>
+                </div>
+
+                <!-- Grouped Bar Chart: Enforcement Results -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-slate-200 text-center">State Cyber Enforcement Action (FY2023 vs FY2024)</h4>
+                    <div class="chart-container">
+                        <canvas id="enforcementChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Table of Enforcement Statistics -->
+            <div class="overflow-x-auto pt-4">
+                <table class="w-full text-left text-xs text-slate-300 border-collapse">
+                    <thead>
+                        <tr class="bg-slate-900 text-slate-400 border-b border-slate-800">
+                            <th class="p-3">Enforcement Metric Category</th>
+                            <th class="p-3">FY2023 Performance</th>
+                            <th class="p-3">FY2024 Performance</th>
+                            <th class="p-3">Primary Responsible Agency</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800">
+                        <tr>
+                            <td class="p-3 font-semibold text-rose-300">URL / Domain Block Orders</td>
+                            <td class="p-3 text-slate-400">2,058 URLs</td>
+                            <td class="p-3 font-bold text-rose-400">62,215 URLs (+30x YoY)</td>
+                            <td class="p-3 text-slate-400">Ministry of DE / Criminal Court</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold text-slate-200">Illegal LINE Accounts Takedown</td>
+                            <td class="p-3 text-slate-400">N/A</td>
+                            <td class="p-3 font-bold text-indigo-400">2,898 Accounts</td>
+                            <td class="p-3 text-slate-400">Ministry of DE / LINE Thailand</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold text-slate-200">Mule Account Prosecutions</td>
+                            <td class="p-3 text-slate-400">N/A</td>
+                            <td class="p-3 font-bold text-amber-400">34,765 Cases (15,375 Gambling)</td>
+                            <td class="p-3 text-slate-400">Royal Thai Police (RTP)</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold text-emerald-300">Frozen Mule Bank Account Funds</td>
+                            <td class="p-3 text-slate-400">N/A</td>
+                            <td class="p-3 font-bold text-emerald-400">฿1.5 Billion ($42M USD)</td>
+                            <td class="p-3 text-slate-400">RTP / AMLO / Ministry of DE</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold text-cyan-300">Suspicious SIM Card Registrations</td>
+                            <td class="p-3 text-slate-400">N/A</td>
+                            <td class="p-3 font-bold text-cyan-400">2.7 Million Lines Suspended</td>
+                            <td class="p-3 text-slate-400">NBTC / Telecom Operators</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION 7: Policy Conclusion & References -->
+        <section id="references" class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+            <div class="border-b border-slate-800 pb-4">
+                <div class="flex items-center space-x-3">
+                    <span class="p-2 rounded-lg bg-purple-500/10 text-purple-400 text-xl">📝</span>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-slate-100">7. Analytical Policy Conclusions & Comprehensive References</h3>
+                        <p class="text-xs sm:text-sm text-slate-400">Technological resilience analysis and formal research bibliography</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategic Policy Analysis -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-slate-300 leading-relaxed">
+                <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="font-bold text-indigo-300 text-sm">📌 Limits of Domain Blocking (Dynamic Switching)</h4>
+                    <p>
+                        Despite state blocking of 62,000+ URLs, operators execute <strong>Dynamic Domain Switching</strong> within minutes, 
+                        relocating IP servers offshore. Sustainable mitigation requires targeting <strong>Financial Infrastructure</strong>—freezing PGW corporate shells and tracing USDT blockchain flows.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800 space-y-2">
+                    <h4 class="font-bold text-emerald-300 text-sm">⚖️ Policy Debate (Entertainment Complex Legalization)</h4>
+                    <p>
+                        Thailand is evaluating integrated Entertainment Complexes to redirect illegal gambling revenue into tax coffers. 
+                        Effective policy requires mandatory biometric KYC controls alongside digital literacy initiatives to curtail demand among youth.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Full Bibliography & References Section -->
+            <div class="pt-4 border-t border-slate-800 space-y-3">
+                <h4 class="font-bold text-slate-200 text-sm flex items-center gap-2">
+                    <span>📚</span> Academic & Institutional Source Bibliography (References)
+                </h4>
+                <ol class="list-decimal list-inside text-xs text-slate-400 space-y-2 leading-relaxed">
+                    <li>
+                        <strong>Center for Gambling Studies (CGS), Faculty of Economics, Chulalongkorn University.</strong> 
+                        <em>National Survey Report on Gambling Behaviors, Prevalence, and Socio-Economic Impacts in Thailand.</em> (2023).
+                    </li>
+                    <li>
+                        <strong>Social and Business Development Research Center (SAB).</strong> 
+                        <em>Empirical Survey on Online Gambling Trends Among Gen Z Youth Cohorts in Thailand.</em> (2023).
+                    </li>
+                    <li>
+                        <strong>Ministry of Digital Economy and Society (DES).</strong> 
+                        <em>Annual Report on Cybercrime Suppression and Illegal Gambling URL Blocking Operations (FY2024).</em>
+                    </li>
+                    <li>
+                        <strong>Royal Thai Police & Cyber Crime Investigation Bureau (CCIB).</strong> 
+                        <em>Investigation Briefing on Automated Payment Gateway Networks (Ask Me Pay / HengPay) and Money Mule Operations.</em> (2024).
+                    </li>
+                    <li>
+                        <strong>Anti-Money Laundering Office (AMLO Thailand).</strong> 
+                        <em>Financial Intelligence Guidance on Cross-Border Cryptocurrency Tracking (USDT TRC-20) in Gambling Syndicates.</em>
+                    </li>
+                    <li>
+                        <strong>SoftGamings & GR8 Tech B2B Documentation.</strong> 
+                        <em>Single API Integration & Seamless Wallet Architecture Specifications.</em> (2024).
+                    </li>
+                    <li>
+                        <strong>Pocket Games Soft (PG Soft).</strong> 
+                        <em>Mobile-First HTML5 Gaming Mathematical Engine Specifications.</em>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-900 py-6 text-center text-xs text-slate-500 space-y-1">
+        <p>© 2026 Thailand Online Gambling Platform Ecosystem Analytics</p>
+        <p>Prepared strictly for educational research and public policy analysis purposes.</p>
+    </footer>
+
+    <!-- Chart.js Scripts Initialization -->
+    <script>
+        Chart.defaults.color = '#94a3b8';
+        Chart.defaults.font.family = 'ui-sans-serif, system-ui, sans-serif';
+
+        const tooltipConfig = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            } else {
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        // 0. Top 5 Platforms Horizontal Bar Chart
+        const ctxTop5 = document.getElementById('top5Chart').getContext('2d');
+        new Chart(ctxTop5, {
+            type: 'bar',
+            data: {
+                labels: [
+                    ['1. UFABET Network', '(Market Leader)'],
+                    ['2. BK8 Platform', '(Regional Giant)'],
+                    ['3. Fun88 Sportsbook', '(Sports Specialist)'],
+                    ['4. Direct PG Slot', '(69pgslot Network)'],
+                    ['5. W88 / M88', '(Veteran Operator)']
+                ],
+                datasets: [{
+                    label: 'Estimated Market Share (%)',
+                    data: [35, 18, 14, 12, 9],
+                    backgroundColor: [
+                        '#f59e0b',
+                        '#6366f1',
+                        '#10b981',
+                        '#f43f5e',
+                        '#06b6d4'
+                    ],
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        max: 40,
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    },
+                    y: {
+                        grid: { display: false }
+                    }
+                },
+                plugins: {
+                    tooltip: tooltipConfig.plugins.tooltip
+                }
+            }
+        });
+
+        // 1. Game Types Donut Chart
+        const ctxGame = document.getElementById('gameTypesChart').getContext('2d');
+        new Chart(ctxGame, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    ['Slot Machines', '& RNG Games'],
+                    ['Live Baccarat', '& Card Games'],
+                    ['Hi-Lo & Traditional', 'Dice Games'],
+                    ['Sports Betting', '(Sportsbook)'],
+                    ['Online Lotteries', '& Stock Schemes']
+                ],
+                datasets: [{
+                    data: [72.0, 35.2, 16.0, 12.5, 25.4],
+                    backgroundColor: [
+                        '#10b981',
+                        '#6366f1',
+                        '#f59e0b',
+                        '#06b6d4',
+                        '#a855f7'
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#1e293b'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            boxWidth: 12,
+                            padding: 10,
+                            font: { size: 11 }
+                        }
+                    },
+                    tooltip: tooltipConfig.plugins.tooltip
+                }
+            }
+        });
+
+        // 2. Historical Player Growth Line Chart
+        const ctxGrowth = document.getElementById('growthChart').getContext('2d');
+        new Chart(ctxGrowth, {
+            type: 'line',
+            data: {
+                labels: ['Year 2019', 'Year 2021', 'Year 2023'],
+                datasets: [{
+                    label: 'Active Casino Players (Millions)',
+                    data: [0.82, 1.94, 5.66],
+                    borderColor: '#f43f5e',
+                    backgroundColor: 'rgba(244, 63, 94, 0.15)',
+                    fill: true,
+                    tension: 0.3,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#f43f5e'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                },
+                plugins: {
+                    tooltip: tooltipConfig.plugins.tooltip
+                }
+            }
+        });
+
+        // 3. Regional Demographics Horizontal Bar Chart
+        const ctxRegional = document.getElementById('regionalChart').getContext('2d');
+        new Chart(ctxRegional, {
+            type: 'bar',
+            data: {
+                labels: [
+                    ['Bangkok Met.', '(5.38M players)'],
+                    ['Isan / Northeast', '(12.12M players)'],
+                    ['Southern Thailand', '(4.73M players)'],
+                    ['Northern Thailand', '(5.91M players)'],
+                    ['Central Thailand', '(6.38M players)']
+                ],
+                datasets: [{
+                    label: 'Gambling Rate (% Pop.)',
+                    data: [68.2, 66.1, 62.0, 60.5, 57.2],
+                    backgroundColor: '#6366f1',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        max: 100,
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    },
+                    y: {
+                        grid: { display: false }
+                    }
+                },
+                plugins: {
+                    tooltip: tooltipConfig.plugins.tooltip
+                }
+            }
+        });
+
+        // 4. Government Enforcement Comparison Grouped Bar Chart
+        const ctxEnforce = document.getElementById('enforcementChart').getContext('2d');
+        new Chart(ctxEnforce, {
+            type: 'bar',
+            data: {
+                labels: [
+                    ['URL Domain Blocks', '(Total URLs)'],
+                    ['LINE Account Blocks', '(Accounts)'],
+                    ['Frozen Mule Funds', '(Million THB)'],
+                    ['Mule Legal Cases', '(Prosecutions)']
+                ],
+                datasets: [
+                    {
+                        label: 'FY2023 Enforcement',
+                        data: [2058, 0, 0, 0],
+                        backgroundColor: '#475569',
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'FY2024 Enforcement',
+                        data: [62215, 2898, 1500, 15375],
+                        backgroundColor: '#f43f5e',
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        type: 'logarithmic',
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                },
+                plugins: {
+                    tooltip: tooltipConfig.plugins.tooltip
+                }
+            }
+        });
+    </script>
+</body>
+</html>
